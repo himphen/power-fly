@@ -1,0 +1,756 @@
+{
+    "schemaVersion": "1.1",
+    "lastUpdated": "2025-07-01",
+    "notes_zh": "所有從香港國際機場 (HKG) 出發的航班，均須遵守香港民航處的規定，即禁止在飛行途中使用流動電源，亦禁止將其存放於頭頂行李架。本資料庫數據僅供參考，出行前請務必與您的航空公司核實最新規定。",
+    "notes_en": "For all flights departing from Hong Kong International Airport (HKG), regulations from the Hong Kong Civil Aviation Department (CAD) apply, which prohibit the in-flight use of power banks and their stowage in overhead compartments. This data is for reference only. Please verify the latest regulations with your airline before traveling.",
+    "airlines": [
+      {
+        "id": "cathay-pacific",
+        "name_en": "Cathay Pacific",
+        "name_zh": "國泰航空公司",
+        "iata_code": "CX",
+        "source_url_en": "https://www.cathaypacific.com/cx/en_HK/baggage/controlled-and-banned-items/lithium-batteries.html",
+        "source_url_zh": "https://www.cathaypacific.com/cx/zh_HK/baggage/controlled-and-banned-items/lithium-batteries.html",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": true,
+          "under_seat_stowage_required": true,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required, especially for flights departing from Korea.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准，特別是從韓國出發的航班。"
+            }
+          ],
+          "summary_en": "In-flight use and overhead storage are strictly prohibited. Power banks must be in carry-on baggage and stored securely under the seat in front.",
+          "summary_zh": "嚴禁在機上使用及存放於頭頂行李架。流動電源必須存放於手提行李內，並穩妥地放置於前方座位下方。"
+        }
+      },
+      {
+        "id": "hong-kong-airlines",
+        "name_en": "Hong Kong Airlines",
+        "name_zh": "香港航空",
+        "iata_code": "HX",
+        "source_url_en": "https://www.hongkongairlines.com/en_HK/fly-with-us/baggage/handcarry",
+        "source_url_zh": "https://www.hongkongairlines.com/zh_HK/fly-with-us/baggage/handcarry",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": true,
+          "under_seat_stowage_required": true,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": false,
+              "notes_en": "Up to 2 spare batteries per passenger. Approval is not explicitly mentioned but it is advisable to check with the airline.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池。條款未明確提及需要批准，但建議向航空公司查詢。"
+            }
+          ],
+          "summary_en": "In-flight use and overhead storage are strictly prohibited. Power banks must be stored in readily accessible locations like under the seat or in the seat pocket.",
+          "summary_zh": "嚴禁在機上使用及存放於頭頂行李架。流動電源必須存放在易於取及的位置，如前方座位下方或座位口袋中。"
+        }
+      },
+      {
+        "id": "hk-express",
+        "name_en": "HK Express",
+        "name_zh": "香港快運航空",
+        "iata_code": "UO",
+        "source_url_en": "https://www.hkexpress.com/Plan/Travel/Controlled-and-Banned-Items",
+        "source_url_zh": "https://www.hkexpress.com/zh-HK/Plan/Travel/Controlled-and-Banned-Items",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": true,
+          "under_seat_stowage_required": true,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and overhead storage are prohibited. Power banks must be in carry-on baggage and individually protected.",
+          "summary_zh": "嚴禁在機上使用及存放於頭頂行李架。流動電源必須存放於手提行李內，並作獨立保護。"
+        }
+      },
+      {
+        "id": "greater-bay-airlines",
+        "name_en": "Greater Bay Airlines",
+        "name_zh": "大灣區航空",
+        "iata_code": "HB",
+        "source_url_en": "https://www.greaterbay-airlines.com/hk/en_HK/manage/our-services/baggage.html",
+        "source_url_zh": "https://www.greaterbay-airlines.com/hk/zh_HK/manage/our-services/baggage.html",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": true,
+          "under_seat_stowage_required": true,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline pre-approval is required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司預先批准。"
+            }
+          ],
+          "summary_en": "In-flight use and overhead storage are prohibited. Power banks must be stored in the seat-back pocket or under the seat in front.",
+          "summary_zh": "嚴禁在機上使用及存放於頭頂行李架。流動電源可放置於椅背儲物格或前方座椅底下的手提包內。"
+        }
+      },
+      {
+        "id": "singapore-airlines",
+        "name_en": "Singapore Airlines",
+        "name_zh": "新加坡航空",
+        "iata_code": "SQ",
+        "source_url_en": "https://www.singaporeair.com/en_UK/gb/travel-info/baggage/baggage-restrictions/",
+        "source_url_zh": "https://www.singaporeair.com/zh_TW/hk/travel-info/baggage/baggage-restrictions/",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and charging are prohibited. Power banks must be in carry-on baggage. Approval is required for batteries over 100Wh.",
+          "summary_zh": "嚴禁在機上使用及充電。流動電源必須存放於手提行李內。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "scoot",
+        "name_en": "Scoot",
+        "name_zh": "酷航",
+        "iata_code": "TR",
+        "source_url_en": "https://www.flyscoot.com/en/plan/booking-your-flight/baggage",
+        "source_url_zh": "https://www.flyscoot.com/zh/announcements-beta/%E9%87%8D%E8%A6%81%E5%85%AC%E5%91%8A-%E9%85%B7%E8%88%AA%E8%88%AA%E7%8F%AD%E7%A6%81%E7%94%A8%E5%85%85%E7%94%B5%E5%AE%9D",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and charging are prohibited. Power banks must be in carry-on baggage. Approval is required for batteries over 100Wh.",
+          "summary_zh": "嚴禁在機上使用及充電。流動電源必須存放於手提行李內。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "china-airlines",
+        "name_en": "China Airlines",
+        "name_zh": "中華航空",
+        "iata_code": "CI",
+        "source_url_en": "https://www.china-airlines.com/au/en/fly/prepare-for-the-fly/baggage/dangerous-goods-information",
+        "source_url_zh": "https://www.china-airlines.com/uk/zh/fly/prepare-for-the-fly/baggage/dangerous-goods-information",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": null,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and charging are prohibited. Power banks must be in carry-on baggage. It is recommended to avoid storing them in overhead compartments.",
+          "summary_zh": "嚴禁在機上使用及充電。流動電源必須存放於手提行李內。建議避免放置於座位上方的行李櫃中。"
+        }
+      },
+      {
+        "id": "eva-air",
+        "name_en": "EVA Air",
+        "name_zh": "長榮航空",
+        "iata_code": "BR",
+        "source_url_en": "https://www.evaair.com/en-gb/fly-prepare/baggage/additional-baggage-information/restrictions/",
+        "source_url_zh": "https://www.evaair.com/zh-hk/fly-prepare/baggage/additional-baggage-information/restrictions/",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": null,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and charging are strictly prohibited. Power banks must be in carry-on baggage. It is recommended to avoid storing them in overhead compartments.",
+          "summary_zh": "嚴禁在機上使用及充電。流動電源必須存放於手提行李內。建議避免放置於座位上方的行李櫃中。"
+        }
+      },
+      {
+        "id": "korean-air",
+        "name_en": "Korean Air",
+        "name_zh": "大韓航空",
+        "iata_code": "KE",
+        "source_url_en": "https://www.koreanair.com/contents/plan-your-travel/baggage/restricted-item?hl=en",
+        "source_url_zh": "https://www.koreanair.com/contents/plan-your-travel/baggage/restricted-item",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": true,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 5,
+              "approval_required": false,
+              "notes_en": "Up to 5 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶5件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and overhead storage are prohibited. Power banks must be carried on your person or in the seat pocket. Approval is required for batteries over 100Wh.",
+          "summary_zh": "嚴禁在機上使用及存放於頭頂行李架。流動電源必須由乘客隨身攜帶或放置在座位口袋中。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "asiana-airlines",
+        "name_en": "Asiana Airlines",
+        "name_zh": "韓亞航空",
+        "iata_code": "OZ",
+        "source_url_en": "https://flyasiana.com/C/GB/EN/contents/restricted-transport-items",
+        "source_url_zh": "https://flyasiana.com/C/HK/ZH/contents/restricted-transport-items",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": true,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 5,
+              "approval_required": false,
+              "notes_en": "Up to 5 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶5件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and overhead storage are prohibited. Power banks must be carried on your person. Approval is required for batteries over 100Wh.",
+          "summary_zh": "嚴禁在機上使用及存放於頭頂行李架。流動電源必須由乘客隨身攜帶。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "airasia",
+        "name_en": "AirAsia",
+        "name_zh": "亞洲航空",
+        "iata_code": "AK",
+        "source_url_en": "https://newsroom.airasia.com/news/travel-advisory-airasia-enhances-in-flight-power-bank-policy-for-safer-flights",
+        "source_url_zh": "https://newsroom.airasia.com/news/travel-advisory-airasia-enhances-in-flight-power-bank-policy-for-safer-flights-ch",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": true,
+          "under_seat_stowage_required": true,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": null,
+              "approval_required": false,
+              "notes_en": "No specific quantity limit mentioned.",
+              "notes_zh": "未提及具體數量限制。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": null,
+              "approval_required": true,
+              "notes_en": "Airline approval required at the check-in counter.",
+              "notes_zh": "需在登機櫃檯獲得航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and overhead storage are prohibited. Power banks must be stored in the seat pocket or under the seat. Approval required for batteries over 100Wh.",
+          "summary_zh": "嚴禁在機上使用及存放於頭頂行李架。流動電源必須存放於前方座椅口袋中或座椅下。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "thai-airways",
+        "name_en": "Thai Airways",
+        "name_zh": "泰國國際航空",
+        "iata_code": "TG",
+        "source_url_en": "https://www.thaiairways.com/en-hk/content/travel-information/baggage/additional-restrictions/",
+        "source_url_zh": "https://www.thaiairways.com/zh-hk/content/travel-information/baggage/additional-restrictions/",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": null,
+              "approval_required": false,
+              "notes_en": "No specific quantity limit mentioned.",
+              "notes_zh": "未提及具體數量限制。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and charging are prohibited. Power banks must be in carry-on baggage.",
+          "summary_zh": "嚴禁在機上使用及充電。流動電源必須存放於手提行李內。"
+        }
+      },
+      {
+        "id": "japan-airlines",
+        "name_en": "Japan Airlines",
+        "name_zh": "日本航空",
+        "iata_code": "JAL",
+        "source_url_en": "https://www.jal.co.jp/jp/en/inter/baggage/limit/",
+        "source_url_zh": "https://www.jal.co.jp/jp/en/inter/baggage/limit/",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": false,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": null,
+              "approval_required": false,
+              "notes_en": "No limit on quantity.",
+              "notes_zh": "沒有數量限制。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": false,
+              "notes_en": "Up to 2 batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶2件。"
+            }
+          ],
+          "summary_en": "In-flight use is generally permitted, but charging is not. Power banks must be in carry-on baggage and protected from short circuits.",
+          "summary_zh": "通常允許在機上使用，但禁止充電。流動電源必須存放於手提行李內並防止短路。"
+        }
+      },
+      {
+        "id": "all-nippon-airways",
+        "name_en": "All Nippon Airways",
+        "name_zh": "全日空",
+        "iata_code": "NH",
+        "source_url_en": "https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/international/",
+        "source_url_zh": "https://www.ana.co.jp/en/jp/guide/boarding-procedures/baggage/international/",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": false,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": null,
+              "approval_required": false,
+              "notes_en": "No limit on quantity.",
+              "notes_zh": "沒有數量限制。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": false,
+              "notes_en": "Up to 2 batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶2件。"
+            }
+          ],
+          "summary_en": "In-flight use is generally permitted, but charging is not. Power banks must be in carry-on baggage and protected from short circuits.",
+          "summary_zh": "通常允許在機上使用，但禁止充電。流動電源必須存放於手提行李內並防止短路。"
+        }
+      },
+      {
+        "id": "united-airlines",
+        "name_en": "United Airlines",
+        "name_zh": "聯合航空",
+        "iata_code": "UA",
+        "source_url_en": "https://www.united.com/en/us/fly/baggage/dangerous-items.html",
+        "source_url_zh": "https://www.united.com/en/us/fly/baggage/dangerous-items.html",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": false,
+          "in_flight_charging_prohibited": false,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": null,
+              "approval_required": false,
+              "notes_en": "Personal devices with lithium batteries under 100Wh are allowed.",
+              "notes_zh": "低於100Wh的個人電子裝置鋰電池允許攜帶。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to two spare batteries allowed with airline approval.",
+              "notes_zh": "經航空公司批准後，最多可攜帶兩件備用電池。"
+            }
+          ],
+          "summary_en": "Power banks are forbidden in checked bags. In-flight use is generally permitted under electronic device rules. Note: Stricter rules from departure airport (e.g., Hong Kong) may apply.",
+          "summary_zh": "流動電源嚴禁放入寄艙行李。機上使用通常按電子裝置規則允許。請注意：出發地機場（如香港）的更嚴格規定可能適用。"
+        }
+      },
+      {
+        "id": "british-airways",
+        "name_en": "British Airways",
+        "name_zh": "英國航空",
+        "iata_code": "BA",
+        "source_url_en": "https://www.britishairways.com/content/information/baggage-essentials/liquids-and-restrictions",
+        "source_url_zh": "https://www.britishairways.com/content/zh/hk/information/baggage-essentials/liquids-and-restrictions",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": false,
+          "in_flight_charging_prohibited": false,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 4,
+              "approval_required": false,
+              "notes_en": "Up to 4 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶4件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": false,
+              "notes_en": "Up to 2 spare batteries per passenger. Automatic operator approval is granted.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，已獲自動批准。"
+            }
+          ],
+          "summary_en": "In-flight use is permitted. Power banks must be in carry-on baggage. Automatic approval for batteries up to 160Wh.",
+          "summary_zh": "允許在機上使用。流動電源必須存放於手提行李內。160Wh以下的電池已獲自動批准。"
+        }
+      },
+      {
+        "id": "lufthansa",
+        "name_en": "Lufthansa",
+        "name_zh": "漢莎航空",
+        "iata_code": "LH",
+        "source_url_en": "https://www.lufthansa.com/hk/en/prepare-for-your-trip/baggage/electronic-devices-and-batteries",
+        "source_url_zh": "https://www.lufthansa.com/hk/hk/prepare-for-your-trip/baggage/electronic-devices-and-batteries",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries in total per passenger.",
+              "notes_zh": "每位旅客最多可攜帶總數20件的備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use and charging are prohibited. Power banks must be in carry-on baggage. Approval required for batteries over 100Wh.",
+          "summary_zh": "嚴禁在機上使用及充電。流動電源必須存放於手提行李內。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "air-france",
+        "name_en": "Air France",
+        "name_zh": "法國航空",
+        "iata_code": "AF",
+        "source_url_en": "https://wwws.airfrance.fr/en/information/bagages/popin_produits-interdits-et-reglementes/produits-interdits-et-reglementes-3",
+        "source_url_zh": "https://wwws.airfrance.com.hk/hk/information/bagages/popin_produits-interdits-et-reglementes/produits-interdits-et-reglementes-3",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": false,
+          "in_flight_charging_prohibited": false,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use is permitted. Power banks must be in carry-on baggage. Approval required for batteries over 100Wh.",
+          "summary_zh": "允許在機上使用。流動電源必須存放於手提行李內。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "klm",
+        "name_en": "KLM Royal Dutch Airlines",
+        "name_zh": "荷蘭皇家航空",
+        "iata_code": "KL",
+        "source_url_en": "https://www.klm.com/information/baggage/restricted-items-hand-baggage",
+        "source_url_zh": "https://www.klm.com.hk/information/baggage/restricted-items-hand-baggage",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": true,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries or power banks per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池或充電寶。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": null,
+              "approval_required": true,
+              "notes_en": "Permission is required for batteries up to 160Wh.",
+              "notes_zh": "攜帶160Wh以下的電池需要獲得許可。"
+            }
+          ],
+          "summary_en": "Recharging spare batteries (power banks) is prohibited on board. Power banks must be in carry-on baggage. Approval required for batteries over 100Wh.",
+          "summary_zh": "禁止在機上為備用電池（流動電源）充電。流動電源必須存放於手提行李內。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "emirates",
+        "name_en": "Emirates",
+        "name_zh": "阿聯酋航空",
+        "iata_code": "EK",
+        "source_url_en": "https://www.emirates.com/hk/english/before-you-fly/travel/dangerous-goods-policy/",
+        "source_url_zh": "https://www.emirates.com/hk/chinese/before-you-fly/travel/dangerous-goods-policy/",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": false,
+          "in_flight_charging_prohibited": true,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 15,
+              "approval_required": false,
+              "notes_en": "Up to 15 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            },
+            {
+              "min_wh": 100.01,
+              "max_wh": 160,
+              "quantity_limit": 2,
+              "approval_required": true,
+              "notes_en": "Up to 2 spare batteries per passenger. Airline approval required.",
+              "notes_zh": "每位旅客最多可攜帶2件備用電池，並須獲航空公司批准。"
+            }
+          ],
+          "summary_en": "In-flight use is generally permitted, but smart bags cannot be charged. Power banks must be in carry-on baggage. Approval required for batteries over 100Wh.",
+          "summary_zh": "通常允許在機上使用，但智能行李不能充電。流動電源必須存放於手提行李內。超過100Wh的電池需要航空公司批准。"
+        }
+      },
+      {
+        "id": "qatar-airways",
+        "name_en": "Qatar Airways",
+        "name_zh": "卡塔爾航空",
+        "iata_code": "QR",
+        "source_url_en": "https://www.qatarairways.com/en-hk/baggage/restricted.html",
+        "source_url_zh": "https://www.qatarairways.com/zh-hk/baggage/restricted.html",
+        "regulations": {
+          "carry_on_only": true,
+          "in_flight_use_prohibited": false,
+          "in_flight_charging_prohibited": false,
+          "overhead_stowage_prohibited": false,
+          "under_seat_stowage_required": false,
+          "unmarked_prohibited": true,
+          "protection_required": true,
+          "capacity": [
+            {
+              "max_wh": 100,
+              "quantity_limit": 20,
+              "approval_required": false,
+              "notes_en": "Up to 20 spare batteries per passenger.",
+              "notes_zh": "每位旅客最多可攜帶20件備用電池。"
+            }
+          ],
+          "summary_en": "In-flight use is generally permitted. Power banks must be in carry-on baggage.",
+          "summary_zh": "通常允許在機上使用。流動電源必須存放於手提行李內。"
+        }
+      }
+    ]
+  }

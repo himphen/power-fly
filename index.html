@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowerFly - 航空電源規定</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="PowerFly helps you check airline power bank regulations quickly and easily. Find out the power bank rules for your next flight.">
+    <meta name="keywords" content="airline power bank rules, power bank regulations, flight safety, airline safety, travel power bank">
+    <meta property="og:title" content="PowerFly - Airline Power Bank Rules">
+    <meta property="og:description" content="Check airline power bank regulations quickly and easily. Find out the power bank rules for your next flight.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="PowerFly - Airline Power Bank Rules">
+    <meta name="twitter:description" content="Check airline power bank regulations quickly and easily">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <link href="dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased overflow-y-scroll">
+    <div id="splash-screen">
+        <h1 class="logo font-black-ops">
+            Power<span class="accent-text">Fly</span>
+        </h1>
+    </div>
+
+    <div class="relative min-h-screen">
+        <div class="absolute top-0 left-0 w-full h-full [mask-image:linear-gradient(to_bottom,white_0,white_75%,transparent_100%)]"></div>
+
+        <div class="relative max-w-5xl mx-auto px-4">
+            <header class="pt-6 pb-4 flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="font-black-ops text-2xl tracking-wider">
+                        Power<span class="accent-text">Fly</span>
+                    </h1>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                        <svg id="theme-icon-sun" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+                        <svg id="theme-icon-moon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+                    </button>
+                    <a href="https://github.com/himphen/power-fly" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.492.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <div class="flex bg-slate-200 dark:bg-slate-800 rounded-full p-1">
+                        <button id="lang-zh" class="lang-btn text-xs font-bold py-1 px-3 rounded-full">繁體</button>
+                        <button id="lang-en" class="lang-btn text-xs font-bold py-1 px-3 rounded-full">ENG</button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="py-8">
+                <section id="controls" class="text-center">
+                    <h2 class="font-black-ops text-3xl md:text-5xl leading-tight">
+                        <span data-lang="zh" class="visible-lang">帶流動電源上機，擔心唔合規矩？</span>
+                        <span data-lang="en">Flying with a power bank? Worried about the rules?</span>
+                    </h2>
+                    <p class="mt-2 text-base text-slate-500 dark:text-slate-400">
+                        <span data-lang="zh" class="visible-lang">準備出發？輸入航空公司名稱，即時查詢由香港出發嘅最新流動電源攜帶指引，確保旅程暢通無阻。</span>
+                        <span data-lang="en">Getting ready to fly? Enter your airline to instantly check the latest power bank regulations for flights departing from Hong Kong and ensure a hassle-free journey.</span>
+                    </p>
+                </section>
+
+                <section id="golden-rules" class="my-12">
+                    <div id="collapsible-content" class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="glass-card p-5 rounded-2xl border-none">
+                            <h3 class="font-bold text-lg mb-3"><span data-lang="zh">1. 計算瓦時 (Wh)</span><span data-lang="en">1. Calculate Watt-hours (Wh)</span></h3>
+                            <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-md text-center font-mono text-base text-slate-800 dark:text-slate-100">(mAh × V) ÷ 1000 = Wh</div>
+                            <div class="mt-3 space-y-2">
+                                <div class="flex gap-2">
+                                    <div class="flex-1">
+                                        <input type="number" id="mah-input" class="watt-input w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700" placeholder="mAh">
+                                    </div>
+                                    <div class="flex items-center text-lg px-2">×</div>
+                                    <div class="flex-1">
+                                        <input type="number" id="voltage-input" class="watt-input w-full px-3 py-2 rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700" placeholder="V">
+                                    </div>
+                                </div>
+                                <div id="wh-result" class="mt-2 p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-center">
+                                    <span class="font-medium"><span id="wh-value">-</span> Wh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card p-5 rounded-2xl border-none">
+                            <h3 class="font-bold text-lg mb-3"><span data-lang="zh">2. 搜尋航空公司</span><span data-lang="en">2. Search Airlines</span></h3>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg>
+                                </div>
+                                <input type="text" id="search-input" class="search-input w-full py-3 pl-12 pr-4 bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 focus:border-accent" placeholder="Search airlines...">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div id="results" class="mt-8 grid grid-cols-1 gap-6">
+                    <!-- Airline Card Template -->
+                    <template id="airline-card-template">
+                        <div class="glass-card rounded-2xl overflow-hidden">
+                            <!-- Header -->
+                            <div class="p-6 border-b border-slate-200 dark:border-slate-700">
+                                <div class="flex justify-between items-start">
+                                    <div class="flex items-center gap-2">
+                                        <h2 class="text-xl font-bold">
+                                            <span class="name-zh"></span>
+                                            <span class="name-en"></span>
+                                            <span class="iata-code text-sm text-slate-500 dark:text-slate-400"></span>
+                                        </h2>
+                                        <a class="source-url-zh hidden p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" target="_blank" rel="noopener" title="查看官方指引">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                            </svg>
+                                        </a>
+                                        <a class="source-url-en hidden p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" target="_blank" rel="noopener" title="View Official Guidelines">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="mt-3 text-sm text-slate-600 dark:text-slate-300 summary"></p>
+                            </div>
+
+                            <!-- Content -->
+                            <div class="divide-y divide-slate-200 dark:divide-slate-700">
+                                <!-- Capacity Rules -->
+                                <div class="p-6">
+                                    <h4 class="font-bold mb-4">
+                                        <span data-lang="zh">容量規定</span>
+                                        <span data-lang="en">Capacity Rules</span>
+                                    </h4>
+                                    <div class="capacity-rules space-y-4"></div>
+                                </div>
+
+                                <!-- Usage Rules -->
+                                <div class="p-6">
+                                    <h4 class="font-bold mb-4">
+                                        <span data-lang="zh">使用規定</span>
+                                        <span data-lang="en">Usage Rules</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-sm">
+                                        <li class="carry-on-rule flex items-start gap-2">
+                                            <svg class="w-5 h-5 mt-0.5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <span>
+                                                <span data-lang="zh">必須放在手提行李</span>
+                                                <span data-lang="en">Must be in carry-on baggage</span>
+                                            </span>
+                                        </li>
+                                        <li class="in-flight-use flex items-start gap-2">
+                                            <svg class="w-5 h-5 mt-0.5 text-red-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                            <svg class="w-5 h-5 mt-0.5 text-green-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <span>
+                                                <span data-lang="zh">機上使用</span>
+                                                <span data-lang="en">In-flight use</span>
+                                            </span>
+                                        </li>
+                                        <li class="in-flight-charging flex items-start gap-2">
+                                            <svg class="w-5 h-5 mt-0.5 text-red-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                            <svg class="w-5 h-5 mt-0.5 text-green-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <span>
+                                                <span data-lang="zh">機上充電</span>
+                                                <span data-lang="en">In-flight charging</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Storage Rules -->
+                                <div class="p-6">
+                                    <h4 class="font-bold mb-4">
+                                        <span data-lang="zh">存放規定</span>
+                                        <span data-lang="en">Storage Rules</span>
+                                    </h4>
+                                    <ul class="space-y-2 text-sm storage-rules">
+                                        <li class="overhead-storage flex items-start gap-2">
+                                            <svg class="w-5 h-5 mt-0.5 text-red-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                            <svg class="w-5 h-5 mt-0.5 text-green-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <span>
+                                                <span data-lang="zh">頭頂行李架</span>
+                                                <span data-lang="en">Overhead compartment</span>
+                                            </span>
+                                        </li>
+                                        <li class="under-seat flex items-start gap-2">
+                                            <svg class="w-5 h-5 mt-0.5 text-red-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                            <svg class="w-5 h-5 mt-0.5 text-green-500 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <span>
+                                                <span data-lang="zh">座位下方</span>
+                                                <span data-lang="en">Under seat</span>
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Capacity Rule Template -->
+                    <template id="capacity-rule-template">
+                        <div class="capacity-rule mb-2 p-3 rounded-lg">
+                            <div class="flex items-center gap-2">
+                                <div class="text-base font-medium"><span class="wh-range"></span></div>
+                                <div class="approval-badge hidden px-2 py-0.5 text-xs rounded-full bg-amber-100 dark:bg-amber-900 text-amber-700 dark:text-amber-100">
+                                    <span data-lang="zh">需要預先批准</span>
+                                    <span data-lang="en">Approval Required</span>
+                                </div>
+                            </div>
+                            <div class="mt-1 text-sm quantity-limit"></div>
+                            <div class="mt-1 text-sm notes"></div>
+                            <div class="exceed-limit-warning hidden mt-2 text-sm text-red-500">
+                                <span data-lang="zh">超出上限，請與航空公司了解更多。</span>
+                                <span data-lang="en">Exceeds limit. Please contact airline for more information.</span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <section id="safety-guidelines" class="mt-12 mb-8">
+                    <div class="glass-card p-5 rounded-2xl border-none">
+                        <h3 class="font-bold text-lg mb-3"><span data-lang="zh">安全指引</span><span data-lang="en">Safety Guidelines</span></h3>
+                        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                            <li><span class="font-bold"><span data-lang="zh">僅限手提行李：</span><span data-lang="en">Carry-on Only: </span></span><span data-lang="zh">流動電源絕對不能放在寄艙行李中。</span><span data-lang="en">Power banks must not be in checked baggage.</span></li>
+                            <li><span class="font-bold"><span data-lang="zh">防止短路：</span><span data-lang="en">Prevent Short Circuits: </span></span><span data-lang="zh">需要用獨立包裝或膠帶保護好，避免金屬接點與其他物品接觸。</span><span data-lang="en">Protect terminals to prevent short circuits.</span></li>
+                            <li><span class="font-bold"><span data-lang="zh">必須清晰標示：</span><span data-lang="en">Clear Labeling: </span></span><span data-lang="zh">沒有標明容量的流動電源或會被拒絕攜帶。</span><span data-lang="en">Unlabeled power banks may be refused.</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                 <footer class="text-center p-8 mt-8">
+                    <p class="text-xs text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+                        <span data-lang="zh" class="visible-lang">免責聲明：本網站資料僅供參考。規定可能隨時變更，出發前請務必向您搭乘的航空公司核實最新資訊。</span>
+                        <span data-lang="en">Disclaimer: This website is for reference only. Regulations can change. Always verify the latest information with your airline before you travel.</span>
+                    </p>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+<script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const sunIcon = document.getElementById('theme-icon-sun');
+        const moonIcon = document.getElementById('theme-icon-moon');
+
+        // Check system preference and localStorage
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const userTheme = localStorage.getItem('theme');
+        const isDark = userTheme === 'dark' || (!userTheme && systemPrefersDark);
+
+        // Initial setup
+        document.documentElement.classList.toggle('dark', isDark);
+        updateThemeIcons(isDark);
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeIcons(isDark);
+        });
+
+        function updateThemeIcons(isDark) {
+            sunIcon.classList.toggle('hidden', isDark);
+            moonIcon.classList.toggle('hidden', !isDark);
+        }
+</script>
+    <script src="src/app.js"></script>
+</body>
+</html>
