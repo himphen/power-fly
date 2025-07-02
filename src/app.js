@@ -73,7 +73,7 @@ function removeSplashScreen() {
 // Fetch and initialize data
 async function initializeApp() {
     try {
-        const response = await fetch('/data/airlines.json');
+        const response = await fetch('data/airlines.json');
         const data = await response.json();
         airlines = data.airlines;
         setInitialLanguage(); // Set initial language before rendering
