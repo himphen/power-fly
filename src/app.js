@@ -4,6 +4,9 @@ const resultsContainer = document.getElementById('results');
 const airlineCardTemplate = document.getElementById('airline-card-template');
 const capacityRuleTemplate = document.getElementById('capacity-rule-template');
 const splashScreen = document.getElementById('splash-screen');
+const themeToggle = document.getElementById('theme-toggle');
+const sunIcon = document.getElementById('theme-icon-sun');
+const moonIcon = document.getElementById('theme-icon-moon');
 
 // Calculator Elements
 const mahInput = document.getElementById('mah-input');
@@ -15,6 +18,31 @@ const whValue = document.getElementById('wh-value');
 let airlines = [];
 let currentLang = getBrowserLanguage();
 let currentWh = null;
+let isDarkMode = false;
+
+// Theme handling
+function initializeTheme() {
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const userTheme = localStorage.getItem('theme');
+    isDarkMode = userTheme === 'dark' || (!userTheme && systemPrefersDark);
+
+    // Set initial theme
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    updateThemeIcons();
+}
+
+function updateThemeIcons() {
+    sunIcon.classList.toggle('hidden', isDarkMode);
+    moonIcon.classList.toggle('hidden', !isDarkMode);
+}
+
+// Theme toggle handler
+themeToggle.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+    document.documentElement.classList.toggle('dark', isDarkMode);
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    updateThemeIcons();
+});
 
 // Get browser language
 function getBrowserLanguage() {
@@ -27,7 +55,7 @@ function getBrowserLanguage() {
 function setInitialLanguage() {
     const zhBtn = document.getElementById('lang-zh');
     const enBtn = document.getElementById('lang-en');
-    
+
     if (currentLang === 'zh') {
         zhBtn.classList.add('active');
         enBtn.classList.remove('active');
@@ -64,22 +92,25 @@ voltageInput.addEventListener('input', calculateWh);
 
 // Remove splash screen
 function removeSplashScreen() {
-    splashScreen.classList.add('fade-out');
     setTimeout(() => {
-        splashScreen.remove();
-    }, 500); // Match the CSS transition duration
+        splashScreen.classList.add('fade-out');
+        setTimeout(() => {
+            splashScreen.remove();
+        }, 500); // Match the CSS transition duration
+    }, 1000);
 }
 
 // Fetch and initialize data
 async function initializeApp() {
     try {
-        const response = await fetch('data/airlines.json');
+        initializeTheme(); // Initialize theme before loading data
+        const response = await fetch('/data/airlines.json');
         const data = await response.json();
         airlines = data.airlines;
-        setInitialLanguage(); // Set initial language before rendering
+        setInitialLanguage();
         renderResults(airlines);
         searchInput.disabled = false;
-        searchInput.placeholder = currentLang === 'zh' ? '搜尋航空公司...' : 'Search airlines...';
+        searchInput.placeholder = currentLang === 'zh' ? '國泰、Cathay、CX' : 'Cathay、CX';
         removeSplashScreen();
     } catch (error) {
         console.error('Error loading airline data:', error);
@@ -90,10 +121,10 @@ async function initializeApp() {
 // Check if a Wh value falls within a capacity rule's range
 function isWhInRange(wh, rule) {
     if (!wh) return false;
-    
+
     const min = rule.min_wh || 0;
     const max = rule.max_wh;
-    
+
     return wh > min && wh <= max;
 }
 
@@ -106,7 +137,7 @@ function isWhExceedingMax(wh, rule) {
 // Render airline cards
 function renderResults(airlines) {
     resultsContainer.innerHTML = '';
-    
+
     if (airlines.length === 0) {
         const noResults = document.createElement('div');
         noResults.className = 'text-center py-16';
@@ -126,7 +157,7 @@ function renderResults(airlines) {
 
     airlines.forEach(airline => {
         const card = airlineCardTemplate.content.cloneNode(true);
-        
+
         // Basic Info
         card.querySelector('.name-zh').textContent = airline.name_zh;
         card.querySelector('.name-en').textContent = airline.name_en;
@@ -136,7 +167,7 @@ function renderResults(airlines) {
         // Source URLs - Show only the current language URL
         const sourceZh = card.querySelector('.source-url-zh');
         const sourceEn = card.querySelector('.source-url-en');
-        
+
         if (currentLang === 'zh') {
             sourceZh.href = airline.source_url_zh;
             sourceZh.classList.remove('hidden');
@@ -150,13 +181,13 @@ function renderResults(airlines) {
         // Capacity Rules
         const capacityRulesContainer = card.querySelector('.capacity-rules');
         const capacityRules = airline.regulations.capacity;
-        
+
         capacityRules.forEach((rule, index) => {
             const ruleElement = capacityRuleTemplate.content.cloneNode(true);
             const ruleDiv = ruleElement.querySelector('.capacity-rule');
             const exceedWarning = ruleElement.querySelector('.exceed-limit-warning');
             const isLastRule = index === capacityRules.length - 1;
-            
+
             // Handle Wh matching and exceeding cases
             if (currentWh) {
                 if (isLastRule && isWhExceedingMax(currentWh, rule)) {
@@ -170,7 +201,7 @@ function renderResults(airlines) {
                     }
                 }
             }
-            
+
             // Watt-hour range
             const whRange = ruleElement.querySelector('.wh-range');
             if (rule.min_wh) {
@@ -187,7 +218,7 @@ function renderResults(airlines) {
             // Quantity limit
             const quantityLimit = ruleElement.querySelector('.quantity-limit');
             if (rule.quantity_limit) {
-                quantityLimit.textContent = currentLang === 'zh' 
+                quantityLimit.textContent = currentLang === 'zh'
                     ? `最多 ${rule.quantity_limit} 件`
                     : `Max ${rule.quantity_limit} units`;
             }
@@ -201,7 +232,7 @@ function renderResults(airlines) {
 
         // Usage Rules
         const regs = airline.regulations;
-        
+
         // In-flight use
         const inFlightUse = card.querySelector('.in-flight-use');
         toggleIcon(inFlightUse, !regs.in_flight_use_prohibited);
@@ -228,7 +259,7 @@ function renderResults(airlines) {
 function toggleIcon(element, isAllowed) {
     const checkIcon = element.querySelector('.text-green-500');
     const crossIcon = element.querySelector('.text-red-500');
-    
+
     if (isAllowed) {
         checkIcon.classList.remove('hidden');
         crossIcon.classList.add('hidden');
@@ -241,7 +272,7 @@ function toggleIcon(element, isAllowed) {
 // Search functionality
 searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
-    const filteredAirlines = airlines.filter(airline => 
+    const filteredAirlines = airlines.filter(airline =>
         airline.name_zh.toLowerCase().includes(searchTerm) ||
         airline.name_en.toLowerCase().includes(searchTerm) ||
         airline.iata_code.toLowerCase().includes(searchTerm)
